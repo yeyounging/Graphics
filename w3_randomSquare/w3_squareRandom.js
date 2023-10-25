@@ -19,8 +19,6 @@ window.onload = function init()
     var program = initShaders( gl, "vertex-shader", "fragment-shader" );
     gl.useProgram( program );
 
-//position
-
     // Load the data into the GPU
 
     var bufferId = gl.createBuffer();

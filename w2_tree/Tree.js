@@ -51,13 +51,13 @@ window.onload = function init()
 	var first = 0 // the starting index in the array of vector points.
 	var count = 3 // the number of indices to be rendered.
 
-	render(first, count) // render function
+	render(first, count) // first leaf
 
-	gl.uniform4fv(offsetLoc,[0,-0.5,0,0]); // color (R,G,B,A)	
-	render(first, count) // render function
+	gl.uniform4fv(offsetLoc,[0,-0.5,0,0]); //set offset to move vertex
+	render(first, count) // second leaf
 
-	gl.uniform4fv(offsetLoc,[0,-1,0,0]); // color (R,G,B,A)	
-	render(first, count) // render function
+	gl.uniform4fv(offsetLoc,[0,-1,0,0]); 	//set offset to move vertex
+	render(first, count) // third leaf
 
 	/*--------------------------------------------------------------------------------------------------- */
 	/* body --------------------------------------------------------------------------------------------- */
@@ -71,11 +71,11 @@ window.onload = function init()
 	gl.bufferData(gl.ARRAY_BUFFER, body, gl.STATIC_DRAW );
 
 	// color
-	gl.uniform4fv(offsetLoc,[0,0,0,0]); // color (R,G,B,A)	
+	gl.uniform4fv(offsetLoc,[0,0,0,0]); //set offset
 	gl.uniform4f(colorLoc, 0.5, 0.25, 0, 1); // color (R,G,B,A)
 	var first = 0
 	var count = 6
-	render(first, count) // render function
+	render(first, count) // tree trunk
 };
 
 function render(first, count) {
